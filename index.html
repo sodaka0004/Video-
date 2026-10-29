@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>សូមស្វាគមន៍</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Kantumruy Pro', 'Siemreap', system-ui, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: radial-gradient(circle at center, #1e1b4b, #0f172a, #020617);
+      overflow: hidden;
+      position: relative;
+      padding: 20px;
+    }
+
+    /* ចលនាពេជ្រធ្លាក់ */
+    .diamond-rain {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .diamond {
+      position: absolute;
+      top: -50px;
+      font-size: 24px;
+      animation: fall linear infinite;
+      filter: drop-shadow(0 0 10px rgba(56, 189, 248, 0.8));
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-50px) rotate(0deg);
+        opacity: 0;
+      }
+      20% {
+        opacity: 1;
+      }
+      80% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* ផ្ទាំងកាតធំ */
+    .welcome-box {
+      position: relative;
+      z-index: 2;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      padding: 40px 24px;
+      border-radius: 24px;
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 0 35px rgba(56, 189, 248, 0.25);
+    }
+
+    /* រូបភាពនៅកណ្តាល */
+    .hero-img {
+      width: 140px;
+      height: 140px;
+      margin: 0 auto 20px;
+      border-radius: 50%;
+      padding: 4px;
+      background: linear-gradient(135deg, #38bdf8, #818cf8, #f472b6);
+      box-shadow: 0 0 25px rgba(56, 189, 248, 0.5);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+
+    /* អក្សរ សូមស្វាគមន៍ ធំៗចែងចាំង */
+    h1 {
+      font-size: 38px;
+      font-weight: 800;
+      margin-bottom: 15px;
+      background: linear-gradient(135deg, #e0f2fe, #38bdf8, #c084fc, #f472b6);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 0 0 25px rgba(56, 189, 248, 0.4);
+      line-height: 1.4;
+    }
+
+    p {
+      color: #cbd5e1;
+      font-size: 16px;
+      line-height: 1.6;
+      margin-bottom: 25px;
+    }
+
+    .sparkle-icon {
+      font-size: 28px;
+      vertical-align: middle;
+      display: inline-block;
+      animation: pulse 1.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes pulse {
+      from { transform: scale(1); filter: drop-shadow(0 0 4px #38bdf8); }
+      to { transform: scale(1.2); filter: drop-shadow(0 0 15px #f472b6); }
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 30px;
+      background: linear-gradient(135deg, #0ea5e9, #6366f1);
+      color: #ffffff;
+      font-size: 16px;
+      font-weight: 600;
+      text-decoration: none;
+      border-radius: 50px;
+      box-shadow: 0 4px 15px rgba(14, 165, 233, 0.4);
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(99, 102, 241, 0.6);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- គ្រាប់ពេជ្រភ្លឺផ្លេកៗ -->
+  <div class="diamond-rain">
+    <span class="diamond" style="left: 10%; animation-duration: 4s; animation-delay: 0s;">💎</span>
+    <span class="diamond" style="left: 25%; animation-duration: 6s; animation-delay: 2s; font-size: 18px;">✨</span>
+    <span class="diamond" style="left: 45%; animation-duration: 5s; animation-delay: 1s;">💎</span>
+    <span class="diamond" style="left: 65%; animation-duration: 7s; animation-delay: 3s; font-size: 20px;">✨</span>
+    <span class="diamond" style="left: 80%; animation-duration: 4.5s; animation-delay: 0.5s;">💎</span>
+    <span class="diamond" style="left: 92%; animation-duration: 5.5s; animation-delay: 2.5s; font-size: 16px;">💎</span>
+  </div>
+
+  <div class="welcome-box">
+    <!-- រូបភាព (ប្រើរូបភាពស្អាតពីអ៊ីនធឺណិត ឬដូរទៅ file.png របស់អ្នកបាន) -->
+    <div class="hero-img">
+      <img src="https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=300&auto=format&fit=crop&q=80" alt="Diamond / Welcome">
+    </div>
+
+    <!-- អក្សរធំៗ -->
+    <h1><span class="sparkle-icon">✨</span> សូមស្វាគមន៍ <span class="sparkle-icon">💎</span></h1>
+    
+    <p>សូមស្វាគមន៍ការមកកាន់គេហទំព័រផ្លូវការ! រីករាយជាមួយបទពិសោធន៍ដ៏ស្រស់ស្អាត និងចែងចាំងបំផុត។</p>
+
+    <a href="#" class="btn">ចូលទស្សនាឥឡូវនេះ</a>
+  </div>
+
+</body>
+</html>
